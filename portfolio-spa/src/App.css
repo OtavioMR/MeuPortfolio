@@ -21,6 +21,11 @@ html {
   font-size: 20px;
 }
 
+.navbar-brand {
+  display: flex;
+  margin-bottom: 10px;
+}
+
 .navbar-nav {
   display: flex;
   gap: 1.5rem;
@@ -86,3 +91,85 @@ html {
   object-fit: cover;
   border-radius: 50%;
 }
+
+.Sublinhado {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.Sublinhado::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--navegacao-gradiente);
+  border-radius: 999px;
+}
+
+.card {
+  background: #1e293b;
+  border: 2px solid #3b82f6 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+}
+
+.card-body {
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title{
+  color: var(--claro) !important;
+}
+
+.card-text {
+  color: var(--claro);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  transform: translateY(-2px);
+}
+
+/* Responsividade melhorada */
+@media (max-width: 640px) {
+  #projetos {
+    padding: 2rem 1rem;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+}
+
+
+/* Garante que as imagens não ultrapassem o container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
