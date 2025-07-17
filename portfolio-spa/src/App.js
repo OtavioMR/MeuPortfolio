@@ -1,6 +1,7 @@
 import React from 'react';
 import minhaFoto from './assets/images/MinhaFotoPerfil.jpeg';
 import fotoProjeto from './assets/images/projeto2.png'
+import certificadoPython from './assets/images/certificadoDigital.pdf';
 import './App.css';
 
 function App() {
@@ -10,6 +11,11 @@ function App() {
     { titulo: "ChronosLux", descricao: "Ecommerce de relógios", imagem: fotoProjeto },
     { titulo: "ChronosLux", descricao: "Ecommerce de relógios", imagem: fotoProjeto },
     { titulo: "ChronosLux", descricao: "Ecommerce de relógios", imagem: fotoProjeto }
+  ];
+
+  const cargos = [
+    { nomeCargo: "Desenvolvedor de projetos VR na USP", dataCargo: "(06/11/2006) - atualmente", responsabilidadesCargos: ["Criação de ambientes em realidade virtual", "Modelagem 3d"] },
+    { nomeCargo: "Freelancer", dataCargo: "(26-12-2025)", responsabilidadesCargos: ["Criar portfólios", "Criar ecommerce"] }
   ];
 
 
@@ -56,6 +62,31 @@ function App() {
           </p>
         </section>
 
+
+
+
+        {/* HISTÓRICO PROFISSIONAL */}
+        <section id="historico-profissional" className="my-5 mx-3">
+          <h2 className="Sublinhado mb-5">Histórico profissional</h2>
+          <div className="row gx-3">
+            {cargos.map((cargo, index) => (
+              <div key={index} className="mb-5">
+                <h2 className='nomeCargo'><b>{cargo.nomeCargo}</b></h2>
+                <p className='dataCargo'>{cargo.dataCargo}</p>
+                <ul className="listaCargo">
+                  {cargo.responsabilidadesCargos.map((item, idx) => (
+                    <li key={idx} className="responsabilidadesCargo">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+
+
+
         <section id="projetos" className="my-5 mx-3">
           <h2 className="Sublinhado text-center mb-4">Projetos</h2>
           <div className="row gy-4 gx-3">
@@ -74,6 +105,29 @@ function App() {
           </div>
         </section>
 
+
+
+        {/* CERTIFICADOS E CURSOS */}
+        <section id='certificados' className='my-5 mx-3'>
+          <h2 className='Sublinhado text-center mb-4'>Certificados</h2>
+          <div className="row gy-4 gx-3">
+            <div className="col-md-6">
+              <div className="card-certificados mx-4 mb-3 p-4">
+                <p className='certificado-tittle'>Python Paideia</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolores quam deserunt dicta sequi quisquam nesciunt cumque consequatur nihil reiciendis illum deleniti libero, perferendis ad corrupti soluta mollitia distinctio vel!</p>
+                <a href={certificadoPython} target='_blank' className='btn btn-primary px-5 certificado-button'>Ver certificado</a>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="card-certificados mx-4 mb-3 p-4">
+                <p className='certificado-tittle'>Python Paideia</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolores quam deserunt dicta sequi quisquam nesciunt cumque consequatur nihil reiciendis illum deleniti libero, perferendis ad corrupti soluta mollitia distinctio vel!</p>
+                <a href={certificadoPython} target='_blank' className='btn btn-primary px-5 certificado-button'>Ver certificado</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
 
 
